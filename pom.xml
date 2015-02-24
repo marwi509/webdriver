@@ -7,6 +7,13 @@
     <groupId>no.marcus</groupId>
     <artifactId>mrfridge</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.1.RELEASE</version>
+    </parent>
 
     <dependencies>
         <dependency>
@@ -34,6 +41,16 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>1.9.18</version>
+                <configuration>
+                    <enableJarClasses>false</enableJarClasses>
+                    <port>8181</port>
+                    <address>0.0.0.0</address>
                 </configuration>
             </plugin>
         </plugins>
